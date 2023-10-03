@@ -46,4 +46,4 @@ Some ideas for future improvements:
 - etc.
 
 ## License
-This project is open source and available under the MIT License.
+This project is open source and available under the [MIT License](https://github.com/Pablow81/stock-analysis-ai/blob/main/LICENSE).
