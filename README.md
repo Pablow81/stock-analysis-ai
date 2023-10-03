@@ -31,6 +31,10 @@ plot_stock_price_with_dividends(stocks[0])
 # Analyze price trend
 analyze_trend(stocks[0], 'Close')
 ```
+### Install required modules
+```
+pip install -r requirements.txt
+```
 
 ## TODOs
 Some ideas for future improvements:
