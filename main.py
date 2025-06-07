@@ -34,16 +34,20 @@ def read_isin_wkn_from_file(filename):
 def fetch_and_analyze_news(ticker: str) -> None:
     stock = yf.Ticker(ticker)
     news = stock.get_news()
+
+    if not news:
+        print("No news found.")
+        return
+
     for index, article in enumerate(news[-10:]):
         print(f"News {index + 1}: {article['title']}")
         sentiment = sia.polarity_scores(article.get('summary', ''))
-        #sentiment = sia.polarity_scores(article['summary'])
-    if sentiment['compound'] > 0.05:
-        print("Sentiment: Good")
-    elif sentiment['compound'] < -0.05:
-        print("Sentiment: Bad")
-    else:
-        print("Sentiment: Neutral")
+        if sentiment['compound'] > 0.05:
+            print("Sentiment: Good")
+        elif sentiment['compound'] < -0.05:
+            print("Sentiment: Bad")
+        else:
+            print("Sentiment: Neutral")
 
 # Function to plot stock prices
 def plot_stock_price(ticker):
