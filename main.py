@@ -1,7 +1,5 @@
 # Import required libraries
-import nltk
-nltk.download('vader_lexicon')
-from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from typing import List
 from sklearn.linear_model import LinearRegression
 import yfinance as yf
